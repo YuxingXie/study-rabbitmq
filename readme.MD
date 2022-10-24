@@ -8,13 +8,13 @@
 
 分类：ActiveMQ，Kafka,RocketMQ,RabbitMQ
 
-## 2. RabbitMQ概念
+## 2. RabbitMQ
 
 它是一个消息中间件，接收并转发消息。
 
 核心概念：生产者、交换机、队列、消费者
 
-核心部分：
+### 核心部分：
 
 1. Hello World（简单模式）
 2. Work queues(工作模式)
@@ -25,4 +25,50 @@
 
 可以认为是6种工作模式。
 
+### 概念：
+
 ![](https://github.com/YuxingXie/study-rabbitmq/raw/main/assets/img/001.png)
+
+* Broker
+* Virtual host
+* Connection
+* Channel
+* Exchange
+* Queue
+* Binding
+
+### 安装
+
+需要Erlang语言环境，配置ERLANG_HOME环境变量，Path添加%ERLANG_HOME%\bin。
+
+windows下安装半天不成功，在centos下安装：
+
+1. curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | sudo bash
+2. yum install -y erlang
+3. rpm --import https://packagecloud.io/rabbitmq/rabbitmq-server/gpgkey
+4. rpm --import https://packagecloud.io/gpg.key
+5. curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash
+6. yum -y install wget
+7. cd ~
+8. mkdir software
+9. cd software
+10. wget https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.8.5/rabbitmq-server-3.8.5-1.el7.noarch.rpm
+11. cd ~
+12. yum -y install epel-release
+13. yum-y install socat
+14. cd ~/software
+15. rpm -ivh rabbitmq-server-3.8.5-1.el7.noarch.rpm
+16. systemctl start rabbitmq-server
+17. ip addr(查看ip，假设ip 192.168.80.128)
+18. systemctl stop fillwalld
+19. 浏览器访问http://192.168.80.128:15672/
+
+输入用户名guest密码guest,此时并不能访问:User can only log in via localhost。
+
+20. 创建账号：rabbitmqctl add_user admin 123
+21. 设置角色：rabbitmqctl set_user_tags admin administrator
+22. 设置权限：rabbitmqctl set_permissions -p "/" admin  ".*" ".*" ".*"
+23. 再次登录，成功！
+
+## 3. Hello world
+
