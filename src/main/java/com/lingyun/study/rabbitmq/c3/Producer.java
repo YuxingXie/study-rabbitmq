@@ -1,24 +1,3 @@
-## 第二章 Hello world模式
-
-生产者消费者模式，本人有专门的GitHub研究该模式。
-
-现在用这个模式编写Hello world(简单模式)发送消息代码。
-
-### 2.1 引入依赖
-
-```groovy
-dependencies {
-    implementation('com.rabbitmq:amqp-client:5.8.0')
-    implementation('commons-io:commons-io:2.6')
-    testImplementation group: 'junit', name: 'junit', version: '4.12'
-}
-```
-
-### 2.2 生产者（Producer）代码
-
-生产者生产消息，发送给rabbitMQ的队列。
-
-```java
 package com.lingyun.study.rabbitmq.c3;
 
 import com.rabbitmq.client.Channel;
@@ -52,21 +31,9 @@ public class Producer {
         //这里第二个参数为路由key，不知道有什么含义，暂时写队列名
         channel.basicPublish("",QUEUE_NAME,null,message.getBytes());
         System.out.println("message has sent!");
+        System.out.println("消息已发送!");
         //加上两个close,main方法才会释放资源并exit
         channel.close();
         connection.close();
     }
 }
-
-```
-
-代码不难理解，但也包含了这个模式的发送消息需要的几个主要对象及方法。而且方法不是那么容易成功的，先是IP不固定保存，然后编码GBK报错，
-然后EOFException:java.io.DataInputStream.readUnsignedByte。
-
-http://192.168.80.128:15672/#/queues可以看到发送的消息。
-
-我们看到main方法启动执行完成后，没有自动exit，说明方法还在维持这连接。手动stop后connections和channels消失。`
-
-### 2.3 消费者（Consumer）代码
-
-消费者用于接收队列里的消息。

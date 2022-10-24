@@ -1,14 +1,26 @@
 plugins {
     id 'java'
 }
-
+java.sourceCompatibility=JavaVersion.VERSION_1_8
+java.targetCompatibility=JavaVersion.VERSION_1_8
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
 group 'com.lingyun.study'
 version '1.0-SNAPSHOT'
 
+
+tasks.withType(JavaCompile) {
+    options.encoding = "utf-8"
+}
+
 repositories {
+    mavenLocal()
     mavenCentral()
+    google()
 }
 
 dependencies {
+    implementation('com.rabbitmq:amqp-client:5.8.0')
+    implementation('commons-io:commons-io:2.6')
     testImplementation group: 'junit', name: 'junit', version: '4.12'
 }
