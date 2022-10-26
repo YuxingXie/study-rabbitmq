@@ -2,7 +2,7 @@
 
 只是笔记不是教程，仅记录本人学习中的重点、疑难和体会，请学习者见谅。
 
-## 1. [MQ&RabbitMQ](https://github.com/YuxingXie/study-rabbitmq/raw/main/assets/md/001.MD)
+## 1. [MQ&RabbitMQ](https://github.com/YuxingXie/study-rabbitmq/blob/main/assets/md/001.MD)
 
 VMware中CentOS设置静态IP:https://blog.csdn.net/yelllowcong/article/details/76293348
 临时关闭命令： systemctl stop firewalld
@@ -54,10 +54,10 @@ rabbitmqctl delete_vhost vhost vhostpath
 ##### 移除所有数据，要在 rabbitmqctl stop_app 之后使用
 rabbitmqctl reset
 
-## 2. [Hello world模式](https://github.com/YuxingXie/study-rabbitmq/raw/main/assets/md/002.MD)
+## 2. [Hello world模式](https://github.com/YuxingXie/study-rabbitmq/blob/main/assets/md/002.MD)
 简单模式
 
-## 3. [Work Queues模式](https://github.com/YuxingXie/study-rabbitmq/raw/main/assets/md/003.MD)
+## 3. [Work Queues模式](https://github.com/YuxingXie/study-rabbitmq/blob/main/assets/md/003.MD)
 工作队列模式
 
 
