@@ -58,7 +58,14 @@ rabbitmqctl reset
 简单模式
 
 ## 3. [Work Queues模式](https://github.com/YuxingXie/study-rabbitmq/blob/main/assets/md/003.MD)
-工作队列模式
+* 工作队列模式
+* 轮询接收消息
+* 自动应答
+* 手动应答
+* 队列持久化
+* 消息持久化
+
+## 4. [发布确认](https://github.com/YuxingXie/study-rabbitmq/blob/main/assets/md/004.MD)
 
 
 

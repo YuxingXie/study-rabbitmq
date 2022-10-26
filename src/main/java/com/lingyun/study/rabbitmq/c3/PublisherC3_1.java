@@ -7,8 +7,7 @@ import java.util.concurrent.TimeoutException;
 
 
 public class PublisherC3_1 {
-    //队列名
-    //发消息
+
     public static void main(String[] args) throws IOException, TimeoutException, InterruptedException {
 
         Channel channel = RabbitMqUtils.createChannel();
