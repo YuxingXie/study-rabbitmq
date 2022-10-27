@@ -2,6 +2,8 @@
 
 只是笔记不是教程，仅记录本人学习中的重点、疑难和体会，请学习者见谅。
 
+参考视频： https://www.youtube.com/playlist?list=PLmOn9nNkQxJGqsOsBEs0MPfazE4mI1QIB
+
 ## 1. [MQ&RabbitMQ](https://github.com/YuxingXie/study-rabbitmq/blob/main/assets/md/001.MD)
 
 VMware中CentOS设置静态IP:https://blog.csdn.net/yelllowcong/article/details/76293348
@@ -59,7 +61,8 @@ rabbitmqctl reset
 
 ## 3. [Work Queues模式](https://github.com/YuxingXie/study-rabbitmq/blob/main/assets/md/003.MD)
 * 工作队列模式
-* 轮询接收消息
+* 轮询分发
+* 不公平分发
 * 自动应答
 * 手动应答
 * 队列持久化

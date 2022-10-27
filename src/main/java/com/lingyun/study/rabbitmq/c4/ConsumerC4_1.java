@@ -1,4 +1,4 @@
-package com.lingyun.study.rabbitmq.c3;
+package com.lingyun.study.rabbitmq.c4;
 
 import com.lingyun.study.rabbitmq.common.RabbitMqUtils;
 import com.rabbitmq.client.CancelCallback;
@@ -9,27 +9,21 @@ import com.rabbitmq.client.Delivery;
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
-/**
- * 手动应答方式
- */
-public class ConsumerC3_2 {
-    public static final String QUEUE_NAME="queue_hello_c3";
+public class ConsumerC4_1 {
+    public static final String QUEUE_NAME="queue_hello_c4";
     public static void main(String[] args) throws IOException, TimeoutException {
 
         Channel channel = RabbitMqUtils.createChannel();
-        channel.basicQos(2);
-        //手动应答，第二个参数为false
+        channel.basicQos(5);
         channel.basicConsume(QUEUE_NAME, true, new DeliverCallback() {
             @Override
-            public void handle(String consumerTag, Delivery message) throws IOException {
-                //应答服务器，通知服务器收到了消息
-//                channel.basicAck(message.getEnvelope().getDeliveryTag(),false);
+            public void handle(String consumerTag, Delivery message) {
                 System.out.println("deliverCallback message:" + new String(message.getBody()));
-//                try {
-//                    Thread.sleep(1500);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }, new CancelCallback() {
             @Override
