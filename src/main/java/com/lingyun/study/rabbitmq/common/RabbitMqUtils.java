@@ -14,6 +14,8 @@ public class RabbitMqUtils {
         factory.setHost("192.168.80.128");
         factory.setUsername("admin");
         factory.setPassword("123");
+        factory.setVirtualHost("/");//设置虚拟主机，可不写，默认也是这个
+        factory.setPort(5672);//设置端口，不设也是这个
         Connection connection = factory.newConnection();
         return connection.createChannel();
     }

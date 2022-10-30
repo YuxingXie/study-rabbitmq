@@ -11,6 +11,9 @@ public class ConsumerC2 {
         factory.setHost("192.168.80.128");
         factory.setUsername("admin");
         factory.setPassword("123");
+        factory.setVirtualHost("/");//设置虚拟主机，可不写，默认也是这个
+        factory.setPort(5672);//设置端口，不设也是这个
+
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
         //学习的时候lambda表达式虽然简洁我却不建议写，因为它隐藏了接口名方法名及参数类型，不利于展示这些信息，除非你对这些滚瓜烂熟。另外语法简洁也不是java追求的特征。
