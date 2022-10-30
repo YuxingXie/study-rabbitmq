@@ -31,7 +31,7 @@ VMware中CentOS设置静态IP:https://blog.csdn.net/yelllowcong/article/details/
 
 ## 4. [发布确认](https://github.com/YuxingXie/study-rabbitmq/blob/main/assets/md/004.MD)
 
-## 5. [发布确认](https://github.com/YuxingXie/study-rabbitmq/blob/main/assets/md/005.MD)
+## 5. [交换机](https://github.com/YuxingXie/study-rabbitmq/blob/main/assets/md/005.MD)
 broker
 exchanges
 
