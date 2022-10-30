@@ -2,7 +2,19 @@
 
 只是笔记不是教程，仅记录本人学习中的重点、疑难和体会，请学习者见谅。
 
-参考视频： https://www.youtube.com/playlist?list=PLmOn9nNkQxJGqsOsBEs0MPfazE4mI1QIB
+* 参考资料1
+
+ 
+    https://www.youtube.com/playlist?list=PLmOn9nNkQxJGqsOsBEs0MPfazE4mI1QIB
+
+跟着学了几章以后发现了不少问题，基本弃用。
+
+* 参考资料2
+
+
+    https://www.youtube.com/playlist?list=PLVNv4jlPFzXsT078uZ25Fz_dJJmMs0IoN
+    
+目前使用中。    
 
 ## 1. [MQ&RabbitMQ](https://github.com/YuxingXie/study-rabbitmq/blob/main/assets/md/001.MD)
 
